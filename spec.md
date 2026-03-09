@@ -295,3 +295,9 @@ SSIM（Structural Similarity Index）
 7. 「扫描」若超过100个文件则停止并弹出提示；「添加」允许一次选择多个json添加；忽略已经加入的文件（同路径），新加入的文件默认被选中。
 8. 文件列表文字使用绿色/红色代表该文件是否是合法的json且有anim节点
 9. 「全选」按钮右侧增加「仅合法」，点击后选中所有有合法节点的json
+
+## 关于菜单
+
+增加「关于」菜单弹出框，显示作者和Github地址
+作者:wkw
+github:https://github.com/wkw1125/animaker

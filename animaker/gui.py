@@ -173,6 +173,12 @@ class AnimakerApp:
             accelerator=merge_accel,
         )
         menubar.add_cascade(label="工具", menu=tools_menu)
+        about_menu = tk.Menu(menubar, tearoff=0)
+        about_menu.add_command(
+            label="关于 Animaker",
+            command=self._show_about,
+        )
+        menubar.add_cascade(label="关于", menu=about_menu)
         self.root.config(menu=menubar)
         # 快捷键：macOS 用 Command，其它平台用 Control
         if sys.platform == "darwin":
@@ -509,6 +515,15 @@ class AnimakerApp:
         self._headtail_mode_combo.bind("<<ComboboxSelected>>", lambda e: (self._on_headtail_mode_change(e), self._defocus_combobox()))
 
         self._right_notebook.bind("<<NotebookTabChanged>>", self._on_tab_changed)
+
+    def _show_about(self) -> None:
+        """显示关于信息，包括作者与 GitHub 地址。"""
+        message = (
+            "Animaker 动画魅客\n\n"
+            "作者：wkw\n"
+            "GitHub：https://github.com/wkw1125/animaker"
+        )
+        messagebox.showinfo("关于 Animaker", message, parent=self.root)
 
     def _on_tab_changed(self, _event: tk.Event) -> None:
         """切换到「动画预览」时，若正在播放则继续调度。"""
