@@ -63,7 +63,7 @@ DEFAULT_PREVIEW_FPS = 16
 
 
 class AnimakerApp:
-    """Animaker 动画魅客应用主类"""
+    """Animaker 动画魅客 应用主类"""
 
     def __init__(self):
         self.root = (TkinterDnD.Tk() if _DND_AVAILABLE else tk.Tk())  # type: ignore[assignment]
